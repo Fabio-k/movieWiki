@@ -20,7 +20,7 @@ class DirectorsController < ApplicationController
   def destroy
     @director = Director.find(params[:id])
     if @director.delete
-      redirect_to director_path
+      redirect_to root_path
     end
   end
   def show

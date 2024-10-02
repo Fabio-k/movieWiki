@@ -1,0 +1,27 @@
+<h1>MovieWiki</h1>
+
+<%= link_to "add movie", new_movie_path%>
+<%= link_to "add director", new_director_path%>
+<%= link_to "add genre", new_genre_path%>
+
+<% @genres.each do |genre|%>
+    <h2>
+        <%= link_to genre.name, genre_path(genre)%> 
+    </h2>
+    <section>
+       <%= "Nenhum filme encontrado" if genre.movies.empty?%>
+        <%genre.movies.each do |movie|%>
+            <div>
+                <%= link_to movie.title, movie_path(movie)%>
+            </div>
+        <% end %>
+
+    </section>    
+<% end%>
+
+<h2>Diretores</h2>
+<% @directors.each do |director|%>
+    <li>
+        <%= link_to director.name, director_path(director)%>
+    </li>
+<% end %>

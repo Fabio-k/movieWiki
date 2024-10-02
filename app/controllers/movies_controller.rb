@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     if @movie.delete
-      redirect_to movies_path        
+      redirect_to root_path        
     end  
   end
 

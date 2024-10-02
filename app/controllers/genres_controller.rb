@@ -13,7 +13,7 @@ class GenresController < ApplicationController
   def create
     @genre = Genre.new(name: params[:genre][:name])
     if @genre.save
-      redirect_to genres_path
+      redirect_to root_path
     end
   end
 
@@ -34,7 +34,7 @@ class GenresController < ApplicationController
     id = params[:id]
     genre = Genre.find(id)
     if genre.delete
-      redirect_to genres_path
+      redirect_to root_path
     end
   end
 end
